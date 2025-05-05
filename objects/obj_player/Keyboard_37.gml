@@ -1,10 +1,16 @@
 if vivo {
+	
+	
 	direcao = "esquerda"
 	sprite_index = imagem[4]
 	
 	//esquerda
 	if !place_meeting(x - vel, y, obj_planta) 		//se não houver planta
 		if (place_free(x - vel, y)) || (place_meeting(x - vel, y, obj_explosao)) { 
+			
+			scr_send_packet(direcao)	//enviar direcao para o servidor
+			show_debug_message(direcao)
+			
 			x -= vel								
 			sprite_index = imagem[8]	//carregar sprite
 		} 

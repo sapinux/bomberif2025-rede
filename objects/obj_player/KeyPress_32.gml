@@ -1,6 +1,10 @@
 if vivo {	
 	
 	if !(place_meeting(x ,y ,obj_bomba)) && (bombas > 0) {	
+		
+		scr_send_packet("bomba")	//enviar direcao para o servidor
+		show_debug_message("bomba")
+		
 		var bomba = instance_create_layer(x, y, "Action", obj_bomba)	//criar bomba
 		with (bomba) {
 			id_pai = global.id_pai							//recebe o id do player criador da bomba
