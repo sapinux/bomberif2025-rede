@@ -10,3 +10,9 @@ global.id_pai = id						//player criador da bomba
 imagem = []								//vetor para alocar os sprites do player
 script_execute(scr_carregar_sprites)	//carregar sprites no vetor
 sprite_index = imagem[1]				//carrega sprite basica
+
+//testes de mensagem ao server
+buffer_seek(global.player_buffer, buffer_seek_start, 0)			//organizacao do buffer
+buffer_write(global.player_cliente, buffer_text, "Ola mundo!")	//conteudo do buffer
+
+network_send_udp_raw(global.cliente, global.ip, global.porta, global.player_buffer, global.size)
