@@ -4,10 +4,6 @@ if vivo {
 	//cima
 	if !place_meeting(x , y - vel, obj_planta)		//se não houver planta
 		if (place_free(x, y - vel)) || (place_meeting(x, y - vel, obj_explosao)) {
-			
-			scr_send_packet(direcao)	//enviar direcao para o servidor
-			show_debug_message(direcao)
-			
 			y -= vel
 			sprite_index = imagem[6]	//carregar sprite
 		}
