@@ -14,10 +14,10 @@ sprite_index = imagem[1]				//carrega sprite basica
 
 
 
-//testes de mensagem ao server--------------------------------------------
+//testes de envio de mensagem ao server--------------------------------------------
 buffer_seek(global.player_buffer, buffer_seek_start, 0)			//organizacao do buffer
 
 //buffer_u8: Um inteiro sem sinal de 8 bits. Este é um valor positivo de 0 a 255.
-buffer_write(global.player_buffer, buffer_u8, 86)		//escrever conteudo do buffer 
+buffer_write(global.player_buffer, buffer_u8, 86)				//escrever conteudo do buffer 
 
 network_send_udp_raw(global.cliente, global.ip, global.porta, global.player_buffer, global.size) //envio da msg
