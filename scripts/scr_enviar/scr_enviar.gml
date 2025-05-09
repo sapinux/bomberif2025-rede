@@ -1,8 +1,7 @@
 function scr_enviar(argument0, argument1) {
 //adicionando valor ao mapa
 
-ds_map_add(global.data, "x", argument0)		//posicao x
-ds_map_add(global.data, "y", argument1)		//posicao y
+ds_map_add(global.data, string(argument0), argument1)		//informacao
 data_json = json_encode(global.data) //converter o mapa em json que é uma string
 ds_map_clear(global.data)	//limpar o mapa
 

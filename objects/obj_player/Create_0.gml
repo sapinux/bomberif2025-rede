@@ -12,4 +12,4 @@ script_execute(scr_carregar_sprites)	//carregar sprites no vetor
 sprite_index = imagem[1]				//carrega sprite basica
 
 
-scr_enviar(x, y)	//executar script de envio
+scr_enviar("x", x)	//executar script de envio
