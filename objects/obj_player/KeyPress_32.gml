@@ -29,7 +29,7 @@ if vivo {
 						break
 				}
 			}
-			scr_enviar("pb", "bomba pulando")							//enviar posicao p server
+			scr_enviar("bp", "bomba pulando")							//enviar posicao p server
 		}
 	}
 }
