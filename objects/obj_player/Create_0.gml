@@ -12,6 +12,6 @@ script_execute(scr_carregar_sprites)	//carregar sprites no vetor
 sprite_index = imagem[1]				//carrega sprite basica
 
 
-scr_enviar("x", x)		//executar script de envio
-scr_enviar("y", y)		//executar script de envio
-scr_enviar("id", id)	//executar script de envio
+scr_enviar("x", x)		//enviar x para o server
+scr_enviar("y", y)		//enviar y para o server
+scr_enviar("id", id)	//enviar id para o server

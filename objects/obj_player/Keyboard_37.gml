@@ -7,18 +7,18 @@ if vivo {
 		if (place_free(x - vel, y)) || (place_meeting(x - vel, y, obj_explosao)) { 
 			x -= vel								
 			sprite_index = imagem[8]	//carregar sprite
-			scr_enviar("x", x)				//enviar posicao p server
+			scr_enviar("x", x)			//enviar x para o server
 		} 
 		
 	//deslizar na quina da parede
 	if (keyboard_check(vk_up) == false) && (keyboard_check(vk_down) == false) && (place_meeting(x - vel, y, obj_parede)) {
 		if (y - (floor(y / global.altura) * global.altura)<=10) && (frac(floor(y/global.altura)/2)==0) {
 			y-=vel
-			scr_enviar("x", x)				//enviar posicao p server
+			scr_enviar("x", x)				//enviar x para o server
 		}
 		if (y - (floor(y / global.altura) * global.altura)>=05) && (frac(floor(y/global.altura)/2)!=0) {
 			y+=vel
-			scr_enviar("x", x)				//enviar posicao p server
+			scr_enviar("x", x)				//enviar x para o server
 		}
 	}
 	
