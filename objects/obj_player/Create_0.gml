@@ -15,8 +15,8 @@ sprite_index = imagem[1]				//carrega sprite basica
 
 //adicionando valor ao mapa
 
-ds_map_add(global.data, "x", x)
-ds_map_add(global.data, "y", y)
+ds_map_add(global.data, "x", x)		//posicao x
+ds_map_add(global.data, "y", y)		//posicao y
 data_json = json_encode(global.data) //converter o mapa em json que é uma string
 ds_map_clear(global.data)	//limpar o mapa
 
