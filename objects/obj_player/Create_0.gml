@@ -15,3 +15,5 @@ sprite_index = imagem[1]				//carrega sprite basica
 scr_enviar("x", x)		//enviar x para o server
 scr_enviar("y", y)		//enviar y para o server
 scr_enviar("id", id)	//enviar id para o server
+
+//show_debug_message(id)
