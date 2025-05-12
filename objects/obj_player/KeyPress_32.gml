@@ -29,7 +29,7 @@ if vivo {
 						break
 				}
 			}
-			scr_enviar("bp", "bp")				//enviar lancamento de bomba p o server
+			scr_enviar("bp", "b" + other.direcao)		//enviar lancamento de bomba p o server
 		}
 	}
 }

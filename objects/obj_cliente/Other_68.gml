@@ -14,7 +14,22 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	if (ds_map_find_value(res_json, "y"))	conteudo = ds_map_find_value(res_json, "y")
 	if (ds_map_find_value(res_json, "id"))	conteudo = ds_map_find_value(res_json, "id")
 	if (ds_map_find_value(res_json, "b") == "b")	conteudo = "bomba"
-	if (ds_map_find_value(res_json, "bp") == "bp")	conteudo = "bomba pulando"
+	if (ds_map_find_value(res_json, "bp") != "a") {
+		switch (ds_map_find_value(res_json, "bp")) {
+			case "bb":
+				conteudo = "bomba pulando para baixo"
+				break
+			case "bc":
+				conteudo = "bomba pulando para cima"
+				break
+			case "be":
+				conteudo = "bomba pulando para esquerda"
+				break
+			case "bd":
+				conteudo = "bomba pulando para direita"
+				break
+		}
+	}
 	if (ds_map_find_value(res_json, "m") == "m")	conteudo = "morreu"
 	
 	show_debug_message(conteudo)
