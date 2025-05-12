@@ -1,5 +1,5 @@
 if vivo {
-	direcao = "cima"
+	direcao = "c"	//cima
 	sprite_index = imagem[2]
 	//cima
 	if !place_meeting(x , y - vel, obj_planta)		//se não houver planta

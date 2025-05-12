@@ -1,5 +1,5 @@
 if vivo {
-	direcao = "baixo"
+	direcao = "b"	//baixo
 	//carregar sprite
 	if !(sprite_index == imagem[1]) sprite_index = imagem[1]
 }

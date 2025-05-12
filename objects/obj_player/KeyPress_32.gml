@@ -15,16 +15,16 @@ if vivo {
 			with (bomba_pulando) {
 				//verifica a direcao do player
 				switch (other.direcao) {
-					case "cima":
+					case "c":
 						vspeed = -4
 						break
-					case "baixo":
+					case "b":
 						vspeed = 4
 						break
-					case "esquerda":
+					case "e":
 						hspeed = -4
 						break
-					case "direita":
+					case "d":
 						hspeed = 4
 						break
 				}

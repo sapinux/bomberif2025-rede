@@ -1,5 +1,5 @@
 if vivo {
-	direcao = "esquerda"
+	direcao = "e"	//esquerda
 	sprite_index = imagem[4]
 	
 	//esquerda
