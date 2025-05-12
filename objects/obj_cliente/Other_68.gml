@@ -1,11 +1,12 @@
-//show_debug_message(json_encode(async_load))
+show_debug_message(json_encode(async_load))
 
-if (async_load[? "size"] > 0) {
-	var buff = async_load[? "buffer"]
+if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
+	var buff = async_load[? "buffer"]				//receber conteudo do buffer
 	buffer_seek(buff, buffer_seek_start, 0)
+	
 	//var resposta = buffer_read(buff, buffer_string)
 	
-	var res_json = json_decode(buffer_read(buff, buffer_string))
+	var res_json = json_decode(buffer_read(buff, buffer_string))	//decodificar o buffer
 	
 	var conteudo
 	
