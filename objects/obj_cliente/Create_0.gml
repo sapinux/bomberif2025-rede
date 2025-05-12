@@ -6,9 +6,13 @@ global.size = 60			//tamanho do pacote em bytes
 network_connect_raw(global.cliente, global.ip, global.porta)					//conexao do cliente c o server
 global.player_buffer = buffer_create(global.size, buffer_fixed, global.size)	//buffer da mensagem ao server
 
+global.host_number = noone		//receber o numero do host
+global.player_number = noone	//receber o numero do player
+
 enum msg_type {	//maquina de estados
 	CREATE_HOST,
 	JOIN_HOST,
 	STOP_HOST,
 	SET_PLAYER_STAT
 } 
+

@@ -1,4 +1,4 @@
-show_debug_message("< " + json_encode(async_load))	//depuracao ---- apagar depois!!!!
+//show_debug_message("< " + json_encode(async_load))	//depuracao ---- apagar depois!!!!
 
 if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	var buff = async_load[? "buffer"]				//receber conteudo do buffer
@@ -33,7 +33,9 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	if (ds_map_find_value(res_json, "t") != "") {
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CREATE_HOST:
-				show_debug_message("< " + "CREATE_HOST")
+				show_debug_message("< " + "CREATE_HOST " + string(ds_map_find_value(res_json, "hn")))
+				global.host_number = ds_map_find_value(res_json, "hn")
+				global.player_number = ds_map_find_value(res_json, "pn")
 				break
 			case msg_type.JOIN_HOST:
 				show_debug_message("< " + "JOIN_HOST")
