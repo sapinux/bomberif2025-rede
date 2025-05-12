@@ -4,6 +4,8 @@ function scr_enviar(tipo, valor, msg_type) {			//argumment0 = tipo de informacao
 global.mapa = ds_map_create();						//criacao do mapa de valores
 ds_map_add(global.mapa, tipo, valor)				//adicionar valor no mapa
 ds_map_add(global.mapa, "t", msg_type)				//adicionar o tipo de estado de maquina
+ds_map_add(global.mapa, "hn", noone)				//adicionar o numero do host | hn: host_number
+ds_map_add(global.mapa, "pn", noone)				//adicionar o numero do player | pn: pla
 data_json = json_encode(global.mapa)				//codificar o mapa em json (converter em string)
 
 show_debug_message("> " + data_json)				//depuracao ---------- apagar depois!!!!!
