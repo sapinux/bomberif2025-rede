@@ -2,7 +2,7 @@ function scr_enviar(tipo, valor) {			//argumment0 = tipo de informacao, argummen
 //adicionando valor ao mapa--------------------------------------------------------------
 
 global.mapa = ds_map_create();						//criacao do mapa de valores
-ds_map_add(global.mapa, tipo, valor)				//adicionar informacao no mapa
+ds_map_add(global.mapa, tipo, valor)				//adicionar valor no mapa
 data_json = json_encode(global.mapa)				//codificar o mapa em json (converter em string)
 ds_map_destroy(global.mapa)							//destruicao do mapa de valores
 
