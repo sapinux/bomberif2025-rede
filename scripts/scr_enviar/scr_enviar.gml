@@ -1,7 +1,7 @@
-function scr_enviar(argument0, argument1) {			//argumment0 = tipo de informacao, argumment1 = informacao
+function scr_enviar(tipo, valor) {			//argumment0 = tipo de informacao, argumment1 = informacao
 //adicionando valor ao mapa--------------------------------------------------------------
 
-ds_map_add(global.data, argument0, argument1)		//adicionar informacao no mapa
+ds_map_add(global.data, tipo, valor)		//adicionar informacao no mapa
 data_json = json_encode(global.data)				//codificar o mapa em json (converter em string)
 ds_map_clear(global.data)							//limpar o mapa
 
