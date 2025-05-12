@@ -7,7 +7,7 @@ if vivo {
 			poder_bomba = other.poder_bomba					//recebe o poder de alcance da explosao
 			other.bombas --									//diminui a quantidade de bombas
 		}
-		scr_enviar("b", "b")							//enviar criacao da bomba p server
+		scr_enviar("b", "b", msg_type.SET_PLAYER_STAT)							//enviar criacao da bomba p server
 	} else {
 		//se estiver sobre uma bomba e possuir a luva
 		if (place_meeting(x ,y , obj_bomba) && luva) {
@@ -29,7 +29,7 @@ if vivo {
 						break
 				}
 			}
-			scr_enviar("bp", "b" + other.direcao)		//enviar lancamento de bomba p o server
+			scr_enviar("bp", "b" + other.direcao, msg_type.SET_PLAYER_STAT)		//enviar lancamento de bomba p o server
 		}
 	}
 }
