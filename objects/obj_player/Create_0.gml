@@ -12,7 +12,7 @@ script_execute(scr_carregar_sprites)	//carregar sprites no vetor
 sprite_index = imagem[1]				//carrega sprite basica
 
 //envio de informacos basicas p o server
-scr_enviar("x", x, msg_type.SET_PLAYER_STAT)		//enviar x para o server
+scr_enviar("x", x, msg_type.CREATE_HOST)		//enviar x para o server
 scr_enviar("y", y, msg_type.SET_PLAYER_STAT)		//enviar y para o server
 scr_enviar("id", id, msg_type.SET_PLAYER_STAT)	//enviar id para o server
 
