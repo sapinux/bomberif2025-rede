@@ -15,7 +15,6 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	}
 	if (ds_map_find_value(res_json, "y")) {
 		
-		
 		conteudo = ds_map_find_value(res_json, "y")		//depuracao -- provisorio
 	}
 	if (ds_map_find_value(res_json, "id"))	conteudo = ds_map_find_value(res_json, "id")	//depuracao -- provisorio
@@ -34,8 +33,7 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	if (typeof(ds_map_find_value(res_json, "bp")) != "undefined") {
 		var bomba_pulando = instance_create_layer(x ,y , "Action", obj_bomba_pulando)	//criar bomba pulando
 			with (bomba_pulando) {
-				//verifica a direcao do player
-				switch (ds_map_find_value(res_json, "bp")) {
+				switch (ds_map_find_value(res_json, "bp")) {		//verifica a direcao do player
 					case "c":
 						vspeed = -4
 						conteudo = "bomba pulando para cima"		//depuracao -- provisorio

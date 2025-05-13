@@ -15,4 +15,3 @@ enum msg_type {	//maquina de estados
 	STOP_HOST,
 	SET_PLAYER_STAT
 } 
-

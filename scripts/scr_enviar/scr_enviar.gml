@@ -5,11 +5,12 @@ global.mapa = ds_map_create();						//criacao do mapa de valores
 ds_map_add(global.mapa, tipo, valor)				//adicionar valor no mapa
 ds_map_add(global.mapa, "t", msg_type)				//adicionar o tipo de estado de maquina
 
-if msg_type == msg_type.CREATE_HOST ds_map_add(global.mapa, "hn", noone)								
-if msg_type == msg_type.STOP_HOST ds_map_add(global.mapa, "hn", global.host_number)
-if msg_type == msg_type.SET_PLAYER_STAT ds_map_add(global.mapa, "hn", global.host_number)				//adicionar o numero do host | hn: host_number
+if msg_type == msg_type.CREATE_HOST ds_map_add(global.mapa, "hn", noone)						//adicionar o numero do host | hn: host_number		
+if msg_type == msg_type.STOP_HOST ds_map_add(global.mapa, "hn", global.host_number)				//adicionar o numero do host | hn: host_number
+if msg_type == msg_type.SET_PLAYER_STAT ds_map_add(global.mapa, "hn", global.host_number)		//adicionar o numero do host | hn: host_number
 
 ds_map_add(global.mapa, "pn", noone)				//adicionar o numero do player | pn: pla
+
 data_json = json_encode(global.mapa)				//codificar o mapa em json (converter em string)
 
 show_debug_message("> " + data_json)				//depuracao ---------- apagar depois!!!!!
