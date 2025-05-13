@@ -8,8 +8,16 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	
 	var conteudo		//depuracao -- provisorio
 	
-	if (ds_map_find_value(res_json, "x"))	conteudo = ds_map_find_value(res_json, "x")		//depuracao -- provisorio
-	if (ds_map_find_value(res_json, "y"))	conteudo = ds_map_find_value(res_json, "y")		//depuracao -- provisorio
+	if (ds_map_find_value(res_json, "x")) {
+									
+		
+		conteudo = ds_map_find_value(res_json, "x")		//depuracao -- provisorio
+	}
+	if (ds_map_find_value(res_json, "y")) {
+		
+		
+		conteudo = ds_map_find_value(res_json, "y")		//depuracao -- provisorio
+	}
 	if (ds_map_find_value(res_json, "id"))	conteudo = ds_map_find_value(res_json, "id")	//depuracao -- provisorio
 	
 	if (ds_map_find_value(res_json, "b") == "b") {

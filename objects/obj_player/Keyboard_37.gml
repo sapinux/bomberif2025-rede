@@ -13,11 +13,11 @@ if vivo {
 	//deslizar na quina da parede
 	if (keyboard_check(vk_up) == false) && (keyboard_check(vk_down) == false) && (place_meeting(x - vel, y, obj_parede)) {
 		if (y - (floor(y / global.altura) * global.altura)<=10) && (frac(floor(y/global.altura)/2)==0) {
-			y-=vel
+			y -= vel
 			scr_enviar("y", y, msg_type.SET_PLAYER_STAT)				//enviar x para o server
 		}
 		if (y - (floor(y / global.altura) * global.altura)>=05) && (frac(floor(y/global.altura)/2)!=0) {
-			y+=vel
+			y += vel
 			scr_enviar("y", y, msg_type.SET_PLAYER_STAT)				//enviar x para o server
 		}
 	}
