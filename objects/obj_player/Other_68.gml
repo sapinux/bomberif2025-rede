@@ -21,21 +21,36 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 			other.bombas --									//diminui a quantidade de bombas
 		}
 	}
-	if (ds_map_find_value(res_json, "bp") != "") {
-		switch (ds_map_find_value(res_json, "bp")) {
-			case "b":
-				conteudo = "bomba pulando para baixo"
-				break
-			case "c":
-				conteudo = "bomba pulando para cima"
-				break
-			case "e":
-				conteudo = "bomba pulando para esquerda"
-				break
-			case "d":
-				conteudo = "bomba pulando para direita"
-				break
-		}
+	//melhgorar o codigo abaixo -------------------
+	if (ds_map_find_value(res_json, "bp") == "b") ||
+		(ds_map_find_value(res_json, "bp") == "c") ||
+		(ds_map_find_value(res_json, "bp") == "d") ||
+		(ds_map_find_value(res_json, "bp") == "e")
+		{
+		
+		var bomba_pulando = instance_create_layer(x ,y , "Action", obj_bomba_pulando)
+			with (bomba_pulando) {
+				//verifica a direcao do player
+				switch (ds_map_find_value(res_json, "bp")) {
+					case "c":
+						vspeed = -4
+						conteudo = "bomba pulando para cima"	//depuracao -- provisorio
+						break
+					case "b":
+						vspeed = 4
+						conteudo = "bomba pulando para baixo"	//depuracao -- provisorio
+						break
+					case "e":
+						hspeed = -4
+						conteudo = "bomba pulando para esquerda"	//depuracao -- provisorio
+						break
+					case "d":
+						hspeed = 4
+						conteudo = "bomba pulando para direita"		//depuracao -- provisorio
+						break
+				}
+			}
+		
 	}
 	if (ds_map_find_value(res_json, "t") != "") {
 		switch (ds_map_find_value(res_json, "t")) {
