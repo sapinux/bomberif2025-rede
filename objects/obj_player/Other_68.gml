@@ -21,24 +21,19 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 			other.bombas --									//diminui a quantidade de bombas
 		}
 	}
-	//melhgorar o codigo abaixo -------------------
-	if (ds_map_find_value(res_json, "bp") == "b") ||
-		(ds_map_find_value(res_json, "bp") == "c") ||
-		(ds_map_find_value(res_json, "bp") == "d") ||
-		(ds_map_find_value(res_json, "bp") == "e")
-		{
-		
-		var bomba_pulando = instance_create_layer(x ,y , "Action", obj_bomba_pulando)
+
+	if (typeof(ds_map_find_value(res_json, "bp")) != "undefined") {
+		var bomba_pulando = instance_create_layer(x ,y , "Action", obj_bomba_pulando)	//criar bomba pulando
 			with (bomba_pulando) {
 				//verifica a direcao do player
 				switch (ds_map_find_value(res_json, "bp")) {
 					case "c":
 						vspeed = -4
-						conteudo = "bomba pulando para cima"	//depuracao -- provisorio
+						conteudo = "bomba pulando para cima"		//depuracao -- provisorio
 						break
 					case "b":
 						vspeed = 4
-						conteudo = "bomba pulando para baixo"	//depuracao -- provisorio
+						conteudo = "bomba pulando para baixo"		//depuracao -- provisorio
 						break
 					case "e":
 						hspeed = -4
@@ -50,12 +45,12 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 						break
 				}
 			}
-		
 	}
+	
 	if (ds_map_find_value(res_json, "t") != "") {
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CREATE_HOST:
-				show_debug_message("< " + "CREATE_HOST " + string(ds_map_find_value(res_json, "hn")))
+				show_debug_message("< " + "CREATE_HOST: " + string(ds_map_find_value(res_json, "hn")))
 				global.host_number = ds_map_find_value(res_json, "hn")
 				global.player_number = ds_map_find_value(res_json, "pn")
 				break
@@ -63,7 +58,7 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 				show_debug_message("< " + "JOIN_HOST")
 				break
 			case msg_type.SET_PLAYER_STAT:
-				show_debug_message("< " + "SET_PLAYER_STAT")
+				show_debug_message("< " + "SET_PLAYER_STAT: " + string(ds_map_find_value(res_json, "hn")))
 				break
 			case msg_type.STOP_HOST:
 				show_debug_message("< " + "STOP_HOST")
