@@ -65,7 +65,11 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 				break
 		}
 	} 
-	if (ds_map_find_value(res_json, "m") == "m")	conteudo = "morreu"
+	if (ds_map_find_value(res_json, "m") == "m") {
+		global.id_pai = 0
+		conteudo = "morreu"
+		instance_destroy()
+	}
 	
 	show_debug_message("< " + string (conteudo))
 	
