@@ -1,4 +1,4 @@
-//show_debug_message("< " + json_encode(async_load))	//depuracao ---- apagar depois!!!!
+//show_debug_message("< " + json_encode(async_load))	//depuracao -- provisorio
 
 if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	var buff = async_load[? "buffer"]				//receber conteudo do buffer
@@ -6,11 +6,12 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 			
 	var res_json = json_decode(buffer_read(buff, buffer_string))	//decodificar o buffer
 	
-	var conteudo
+	var conteudo		//depuracao -- provisorio
 	
-	if (ds_map_find_value(res_json, "x"))	conteudo = ds_map_find_value(res_json, "x")
-	if (ds_map_find_value(res_json, "y"))	conteudo = ds_map_find_value(res_json, "y")
-	if (ds_map_find_value(res_json, "id"))	conteudo = ds_map_find_value(res_json, "id")
+	if (ds_map_find_value(res_json, "x"))	conteudo = ds_map_find_value(res_json, "x")		//depuracao -- provisorio
+	if (ds_map_find_value(res_json, "y"))	conteudo = ds_map_find_value(res_json, "y")		//depuracao -- provisorio
+	if (ds_map_find_value(res_json, "id"))	conteudo = ds_map_find_value(res_json, "id")	//depuracao -- provisorio
+	
 	if (ds_map_find_value(res_json, "b") == "b") {
 		conteudo = "bomba"			//para depuracao - provisorio
 		
@@ -47,30 +48,30 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 			}
 	}
 	
-	if (ds_map_find_value(res_json, "t") != "") {
+	if (typeof(ds_map_find_value(res_json, "t")) != "undefined") {
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CREATE_HOST:
-				show_debug_message("< " + "CREATE_HOST: " + string(ds_map_find_value(res_json, "hn")))
+				show_debug_message("< " + "CREATE_HOST: " + string(ds_map_find_value(res_json, "hn")))	//depuracao -- provisorio
 				global.host_number = ds_map_find_value(res_json, "hn")
 				global.player_number = ds_map_find_value(res_json, "pn")
 				break
 			case msg_type.JOIN_HOST:
-				show_debug_message("< " + "JOIN_HOST")
+				show_debug_message("< " + "JOIN_HOST")	//depuracao -- provisorio
 				break
 			case msg_type.SET_PLAYER_STAT:
-				show_debug_message("< " + "SET_PLAYER_STAT: " + string(ds_map_find_value(res_json, "hn")))
+				show_debug_message("< " + "SET_PLAYER_STAT: " + string(ds_map_find_value(res_json, "hn")))	//depuracao -- provisorio
 				break
 			case msg_type.STOP_HOST:
-				show_debug_message("< " + "STOP_HOST")
+				show_debug_message("< " + "STOP_HOST")	//depuracao -- provisorio
 				break
 		}
 	} 
 	if (ds_map_find_value(res_json, "m") == "m") {
 		global.id_pai = 0
-		conteudo = "morreu"
+		conteudo = "morreu"		//depuracao -- provisorio
 		instance_destroy()
 	}
 	
-	show_debug_message("< " + string (conteudo))
+	show_debug_message("< " + string (conteudo))	//depuracao -- provisorio
 	
 }
