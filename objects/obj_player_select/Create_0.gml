@@ -1,0 +1,1 @@
+scr_enviar("x", x, msg_type.CREATE_HOST)

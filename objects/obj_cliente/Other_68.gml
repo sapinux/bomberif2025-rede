@@ -9,29 +9,28 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	var conteudo		//depuracao -- provisorio
 	
 	if (ds_map_find_value(res_json, "x")) {
-									
-		
 		conteudo = ds_map_find_value(res_json, "x")		//depuracao -- provisorio
 	}
+	
 	if (ds_map_find_value(res_json, "y")) {
-		
 		conteudo = ds_map_find_value(res_json, "y")		//depuracao -- provisorio
 	}
+	
 	if (ds_map_find_value(res_json, "id"))	conteudo = ds_map_find_value(res_json, "id")	//depuracao -- provisorio
 	
 	if (ds_map_find_value(res_json, "b") == "b") {
 		conteudo = "bomba"			//para depuracao - provisorio
 		
-		var bomba = instance_create_layer(x, y, "Action", obj_bomba)	//criar bomba
+		var bomba = instance_create_layer(global.id_pai.x, global.id_pai.y, "Action", obj_bomba)	//criar bomba
 		with (bomba) {
 			id_pai = global.id_pai							//recebe o id do player criador da bomba
-			poder_bomba = other.poder_bomba					//recebe o poder de alcance da explosao
-			other.bombas --									//diminui a quantidade de bombas
+			poder_bomba = global.id_pai.poder_bomba			//recebe o poder de alcance da explosao
+			global.id_pai.bombas --							//diminui a quantidade de bombas
 		}
 	}
 
 	if (typeof(ds_map_find_value(res_json, "bp")) != "undefined") {
-		var bomba_pulando = instance_create_layer(x ,y , "Action", obj_bomba_pulando)	//criar bomba pulando
+		var bomba_pulando = instance_create_layer(global.id_pai.x ,global.id_pai.y , "Action", obj_bomba_pulando)	//criar bomba pulando
 			with (bomba_pulando) {
 				switch (ds_map_find_value(res_json, "bp")) {		//verifica a direcao do player
 					case "c":
@@ -73,9 +72,9 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 		}
 	} 
 	if (ds_map_find_value(res_json, "m") == "m") {
+		instance_destroy(global.id_pai)
 		global.id_pai = 0
 		conteudo = "morreu"		//depuracao -- provisorio
-		instance_destroy()
 	}
 	
 	show_debug_message("< " + string (conteudo))	//depuracao -- provisorio
