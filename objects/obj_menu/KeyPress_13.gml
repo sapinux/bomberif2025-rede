@@ -1,6 +1,6 @@
 switch (opcoes[indice]) {
 	case "Iniciar":
-		room_goto_next()
+		room_goto(rm_player_select)
 		break
 	//case "Selecionar Jogador":
 	//	room_goto(rm_player_select)
