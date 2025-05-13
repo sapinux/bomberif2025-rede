@@ -13,11 +13,11 @@ if vivo {
 	if (keyboard_check(vk_left)==false) && (keyboard_check(vk_right)==false) && (place_meeting(x, y - vel, obj_parede)) {
 		if (x - (floor(x / global.largura) * global.largura) <= 10) && (frac(floor(x / global.largura) / 2) == 0) {
 			x -= vel
-			scr_enviar("y", y, msg_type.SET_PLAYER_STAT)				//enviar y para o server
+			scr_enviar("x", x, msg_type.SET_PLAYER_STAT)				//enviar y para o server
 		}
 		if (x - (floor(x / global.largura) * global.largura) >= 05) && (frac(floor(x / global.largura) / 2) != 0) {
 			x += vel
-			scr_enviar("y", y, msg_type.SET_PLAYER_STAT)				//enviar y para o server
+			scr_enviar("x", x, msg_type.SET_PLAYER_STAT)				//enviar y para o server
 		}
 	}	
 	
