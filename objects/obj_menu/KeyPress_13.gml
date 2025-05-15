@@ -1,6 +1,7 @@
 switch (opcoes[indice]) {
 	case "Iniciar":
-		room_goto(rm_player_select)
+		scr_enviar("m", "i", msg_type.CREATE_HOST)
+		//room_goto(rm_player_select)
 		break
 	//case "Selecionar Jogador":
 	//	room_goto(rm_player_select)
