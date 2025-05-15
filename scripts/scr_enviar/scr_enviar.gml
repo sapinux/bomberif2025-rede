@@ -9,7 +9,7 @@ if msg_type == msg_type.CREATE_HOST ds_map_add(global.mapa, "hn", noone)						//
 if msg_type == msg_type.STOP_HOST ds_map_add(global.mapa, "hn", global.host_number)				//adicionar o numero do host | hn: host_number
 if msg_type == msg_type.SET_PLAYER_STAT ds_map_add(global.mapa, "hn", global.host_number)		//adicionar o numero do host | hn: host_number
 
-ds_map_add(global.mapa, "pn", noone)				//adicionar o numero do player | pn: pla
+ds_map_add(global.mapa, "pn", global.player_number)				//adicionar o numero do player | pn: pla
 
 data_json = json_encode(global.mapa)				//codificar o mapa em json (converter em string)
 
