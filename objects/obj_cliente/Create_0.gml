@@ -1,5 +1,5 @@
 global.cliente = network_create_socket(network_socket_udp)	//tipo de conexao com o server
-global.ip = "127.0.0.1"		//ip do server
+global.ip = "192.168.100.93"		//ip do server
 global.porta = 62832		//porta utilizada para enviar p o server
 global.size = 60			//tamanho do pacote em bytes
 
