@@ -1,5 +1,5 @@
 global.cliente = network_create_socket(network_socket_udp)	//tipo de conexao com o server
-global.ip = "192.168.100.93"		//ip do server
+global.ip = "200.131.5.41"		//ip do server
 global.porta = 62832		//porta utilizada para enviar p o server
 global.size = 60			//tamanho do pacote em bytes
 
@@ -10,7 +10,7 @@ global.host_number = noone		//receber o numero do host
 global.player_number = noone	//receber o numero do player
 
 enum msg_type {	//maquina de estados
-	CREATE_HOST,
+	CRIAR_SALA,
 	JOIN_HOST,
 	STOP_HOST,
 	SET_PLAYER_STAT
