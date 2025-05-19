@@ -57,9 +57,11 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CRIAR_SALA:
 				show_debug_message("< " + "CRIAR_SALA: " + string(ds_map_find_value(res_json, "sn")) + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
-				global.host_number = ds_map_find_value(res_json, "sn")
-				global.player_number = ds_map_find_value(res_json, "pn")
-				room_goto(rm_player_select)				//carrega a tela de escolha de personagem
+				
+				global.sala_number = ds_map_find_value(res_json, "sn")		//recebe do server o numero da sala que entrou
+				global.player_number = ds_map_find_value(res_json, "pn")	//recebe do server o numero do player na sala
+				room_goto(rm_player_select)									//carrega a tela de escolha de personagem
+				
 				conteudo = "sala criada!"				//depuracao -- provisorio
 				break
 			case msg_type.JOIN_HOST:
