@@ -60,7 +60,7 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 				global.host_number = ds_map_find_value(res_json, "hn")
 				global.player_number = ds_map_find_value(res_json, "pn")
 				room_goto(rm_player_select)				//carrega a tela de escolha de personagem
-				conteudo = "host criado!"				//depuracao -- provisorio
+				conteudo = "sala criada!"				//depuracao -- provisorio
 				break
 			case msg_type.JOIN_HOST:
 				show_debug_message("< " + "JOIN_HOST")	//depuracao -- provisorio
