@@ -56,7 +56,7 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	if (typeof(ds_map_find_value(res_json, "t")) != "undefined") {
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CRIAR_SALA:
-				show_debug_message("< " + "CRIAR_SALA: " + string(ds_map_find_value(res_json, "sn")) + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
+				show_debug_message("recebido do servidor < " + "CRIAR_SALA SN: " + string(ds_map_find_value(res_json, "sn")) + " PN: " + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
 				
 				global.sala_number = ds_map_find_value(res_json, "sn")		//recebe do server o numero da sala que entrou
 				global.player_number = ds_map_find_value(res_json, "pn")	//recebe do server o numero do player na sala

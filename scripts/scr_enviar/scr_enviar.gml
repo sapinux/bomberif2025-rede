@@ -13,7 +13,7 @@ ds_map_add(global.mapa, "pn", global.player_number)				//adicionar o numero do p
 
 data_json = json_encode(global.mapa)				//codificar o mapa em json (converter em string)
 
-show_debug_message("> " + data_json)				//depuracao ---------- apagar depois!!!!!
+show_debug_message("para o servidor > " + data_json)				//depuracao ---------- apagar depois!!!!!
 
 ds_map_destroy(global.mapa)							//destruicao do mapa de valores
 
