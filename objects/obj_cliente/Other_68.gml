@@ -56,13 +56,16 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	if (typeof(ds_map_find_value(res_json, "t")) != "undefined") {
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CRIAR_SALA:
-				show_debug_message("recebido do servidor < " + "CRIAR_SALA SN: " + string(ds_map_find_value(res_json, "sn")) + " PN: " + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
+				if (ds_map_find_value(res_json, "pn") == 1) {
+					show_debug_message("recebido do servidor < " + "CRIAR_SALA SN: " + string(ds_map_find_value(res_json, "sn")) + " PN: " + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
 				
-				global.sala_number = ds_map_find_value(res_json, "sn")		//recebe do server o numero da sala que entrou
-				global.player_number = ds_map_find_value(res_json, "pn")	//recebe do server o numero do player na sala
-				room_goto(rm_player_select)									//carrega a tela de escolha de personagem
+					global.sala_number = ds_map_find_value(res_json, "sn")		//recebe do server o numero da sala que entrou
+					global.player_number = ds_map_find_value(res_json, "pn")	//recebe do server o numero do player na sala
+														//carrega a tela de escolha de personagem
 				
-				conteudo = "sala criada!"				//depuracao -- provisorio
+					conteudo = "sala criada!"				//depuracao -- provisorio
+				} else conteudo = "chegou mais um jogador!"
+				room_goto(rm_player_select)
 				break
 			case msg_type.JOIN_HOST:
 				show_debug_message("< " + "JOIN_HOST")	//depuracao -- provisorio
