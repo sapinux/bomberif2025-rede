@@ -56,8 +56,8 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 	if (typeof(ds_map_find_value(res_json, "t")) != "undefined") {
 		switch (ds_map_find_value(res_json, "t")) {
 			case msg_type.CRIAR_SALA:
-				show_debug_message("< " + "CRIAR_SALA: " + string(ds_map_find_value(res_json, "hn")) + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
-				global.host_number = ds_map_find_value(res_json, "hn")
+				show_debug_message("< " + "CRIAR_SALA: " + string(ds_map_find_value(res_json, "sn")) + string(ds_map_find_value(res_json, "pn")))	//depuracao -- provisorio
+				global.host_number = ds_map_find_value(res_json, "sn")
 				global.player_number = ds_map_find_value(res_json, "pn")
 				room_goto(rm_player_select)				//carrega a tela de escolha de personagem
 				conteudo = "sala criada!"				//depuracao -- provisorio
@@ -66,7 +66,7 @@ if (async_load[? "size"] > 0) {		//se houver informacao recebido do server
 				show_debug_message("< " + "JOIN_HOST")	//depuracao -- provisorio
 				break
 			case msg_type.SET_PLAYER_STAT:
-				show_debug_message("< " + "SET_PLAYER_STAT: " + string(ds_map_find_value(res_json, "hn")))	//depuracao -- provisorio
+				show_debug_message("< " + "SET_PLAYER_STAT: " + string(ds_map_find_value(res_json, "sn")))	//depuracao -- provisorio
 				break
 			case msg_type.STOP_HOST:
 				show_debug_message("< " + "STOP_HOST")	//depuracao -- provisorio
